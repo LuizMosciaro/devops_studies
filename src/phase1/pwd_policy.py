@@ -31,6 +31,17 @@ def replace_minlen_value(line: str, new_minlen: int) -> str:
     return replaced_line
 
 def set_password_min_length(length: int, backup: bool = True) -> None:
+    """
+    Sets the minimum password length in the system's PAM configuration.
+    This function modifies the 'minlen' parameter in the common-password file.
+
+    Args:
+        length (int): The new minimum password length.
+        backup (bool): If True, creates a backup of the original configuration file.
+
+    Returns:
+        str: A message indicating success or failure.
+    """
     
     if backup:
         print(f"Creating a backup file")
